@@ -4,168 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SquadTab | Friends First. Math Later.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #00D1FF; /* Bright blue for a techy/fresh vibe */
-            --dark: #0F172A;
-            --light: #F8FAFC;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            background-color: var(--dark);
-            color: white;
-            line-height: 1.6;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Navigation */
-        nav {
-            padding: 30px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-weight: 800;
-            font-size: 1.5rem;
-            color: var(--primary);
-            text-decoration: none;
-            letter-spacing: -1px;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.1;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: #94A3B8;
-            max-width: 600px;
-            margin: 0 auto 40px;
-        }
-
-        /* App Buttons */
-        .btn-group {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            background: white;
-            color: var(--dark);
-            padding: 15px 35px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Features */
-        .features {
-            padding: 80px 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .feature-card {
-            background: #1E293B;
-            padding: 40px;
-            border-radius: 24px;
-            border: 1px solid #334155;
-        }
-
-        .feature-card h3 {
-            color: var(--primary);
-            margin-top: 0;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 60px 0;
-            border-top: 1px solid #334155;
-            color: #64748B;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #0F172A; color: white; }
+        .gradient-text { background: linear-gradient(90deg, #00D1FF, #0076FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <nav>
-            <a href="#" class="logo">SQUADTAB</a>
-            <div>Launching soon in 🇮🇳 & 🇬🇧</div>
-        </nav>
+    <nav class="flex items-center justify-between p-6 max-w-7xl mx-auto">
+        <div class="text-2xl font-bold tracking-tighter">SQUAD<span class="text-blue-500">TAB</span></div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+            <a href="#features" class="hover:text-white transition">Features</a>
+            <a href="#about" class="hover:text-white transition">About</a>
+        </div>
+        <a href="#waitlist" class="bg-blue-600 hover:bg-blue-500 px-5 py-2 rounded-full text-sm font-semibold transition">Join Waitlist</a>
+    </nav>
 
-        <section class="hero">
-            <h1>Friends First.<br>Math Later.</h1>
-            <p>The smartest way for squads to split bills, track trips, and settle instantly with one-tap payments.</p>
-            
-            <div class="btn-group">
-                <a href="#" class="btn">
-                    <span>Get it on App Store</span>
-                </a>
-                <a href="#" class="btn">
-                    <span>Get it on Play Store</span>
-                </a>
-            </div>
-        </section>
+    <section class="max-w-7xl mx-auto px-6 py-20 text-center">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+            Friends First. <br><span class="gradient-text">Math Later.</span>
+        </h1>
+        <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">
+            The simplest way to split bills, track group expenses, and settle up instantly via UPI in India or Open Banking in the UK.
+        </p>
+        <div class="flex flex-col md:flex-row justify-center gap-4">
+            <input type="email" placeholder="Enter your email" class="px-6 py-4 rounded-xl bg-slate-800 border border-slate-700 focus:outline-none focus:border-blue-500 w-full md:w-80">
+            <button class="bg-blue-600 hover:bg-blue-500 px-8 py-4 rounded-xl font-bold transition">Get Early Access</button>
+        </div>
+    </section>
 
-        <section class="features">
-            <div class="feature-card">
-                <h3>Track Together</h3>
-                <p>Add expenses in real-time during trips or at dinner. No more "who paid what" arguments.</p>
+    <section id="features" class="max-w-7xl mx-auto px-6 py-20 border-t border-slate-800">
+        <div class="grid md:grid-cols-3 gap-12">
+            <div class="p-8 rounded-3xl bg-slate-900/50 border border-slate-800">
+                <div class="text-blue-500 text-3xl mb-4">⚡️</div>
+                <h3 class="text-xl font-bold mb-2">Split in Seconds</h3>
+                <p class="text-gray-400 text-sm">Snap a picture of any receipt or add expenses manually. We handle the math.</p>
             </div>
-            <div class="feature-card">
-                <h3>Settle Instantly</h3>
-                <p>One tap opens your favorite UPI app (GPay/PhonePe) or UK Bank app with the exact amount pre-filled.</p>
+            <div class="p-8 rounded-3xl bg-slate-900/50 border border-slate-800">
+                <div class="text-blue-500 text-3xl mb-4">🇮🇳 🇬🇧</div>
+                <h3 class="text-xl font-bold mb-2">Multi-Currency</h3>
+                <p class="text-gray-400 text-sm">Perfect for your trip to Goa or a weekend in London. Seamless UPI & UK Bank transfers.</p>
             </div>
-            <div class="feature-card">
-                <h3>Non-Custodial</h3>
-                <p>We never touch your money. Payments go directly from your bank to your friend's bank.</p>
+            <div class="p-8 rounded-3xl bg-slate-900/50 border border-slate-800">
+                <div class="text-blue-500 text-3xl mb-4">🤝</div>
+                <h3 class="text-xl font-bold mb-2">Zero Friction</h3>
+                <p class="text-gray-400 text-sm">No more awkward reminders. One-tap settlement links for everyone in the squad.</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <footer>
-            &copy; 2024 SquadTab. All rights reserved. <br>
-            Designed for the modern squad.
-        </footer>
-    </div>
+    <section id="waitlist" class="max-w-5xl mx-auto px-6 py-20 my-20 rounded-3xl bg-gradient-to-b from-blue-600 to-blue-800 text-center">
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">Ready to clear the tab?</h2>
+        <p class="text-blue-100 mb-8 max-w-xl mx-auto">Be the first to know when we launch in the App Store and Play Store.</p>
+        <button class="bg-white text-blue-700 px-10 py-4 rounded-full font-bold hover:bg-gray-100 transition">Secure My Spot</button>
+    </section>
+
+    <footer class="max-w-7xl mx-auto px-6 py-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+        <p>© 2025 SquadTab. All rights reserved.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+            <a href="#" class="hover:text-white">Privacy</a>
+            <a href="#" class="hover:text-white">Terms</a>
+            <span>Launching in 🇮🇳 & 🇬🇧</span>
+        </div>
+    </footer>
 
 </body>
 </html>
